@@ -10,7 +10,7 @@ const timeline = [
   [5050, 'HAPPY'],
   [7100, 'BIRTHDAY'],
   [9400, 'TO'],
-  [10750, 'MON AMOUR'],
+  [10750, 'YOU ❤️'],
 ];
 
 export default function MatrixCelebration({ onCandlesBlown }) {
