@@ -22,8 +22,16 @@ export default function CakeScene({ onBlown }) {
               </span>
             ))}
           </div>
-          <div className="frosting-tier frosting-top"><span>MON AMOUR</span></div>
-          <div className="frosting-tier frosting-bottom"><i className="cake-drip drip-one" /><i className="cake-drip drip-two" /><i className="cake-drip drip-three" /></div>
+          <div className="frosting-tier frosting-top"><span className="cake-name">Amel</span></div>
+          <div className="frosting-tier frosting-bottom">
+            <i className="cake-drip drip-one" />
+            <i className="cake-drip drip-two" />
+            <i className="cake-drip drip-three" />
+            <span className="cake-dedication">
+              <span className="cake-date">02/10/2001</span>
+              <span className="cake-love-note">Mon cœur est à toi</span>
+            </span>
+          </div>
           <div className="cake-decoration" aria-hidden="true"><i /><i /><i /><i /></div>
           <div className="cake-stand" />
         </div>

@@ -186,7 +186,10 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ffd7e6; outline-offs
 .frosting-top { bottom: 43%; left: 20%; z-index: 2; width: 60%; height: 31%; border-radius: 50% / 18%; }
 .frosting-bottom { bottom: 9%; left: 7%; z-index: 1; width: 86%; height: 43%; border-radius: 50% / 16%; background-image: repeating-linear-gradient(0deg,transparent 0 20px,rgba(255,231,244,.06) 20px 21px),linear-gradient(100deg,#851747,#dc4a8c 20%,#a5225f 46%,#e5639d 73%,#7a1644); }
 .frosting-tier::before { content: ""; position: absolute; top: -7%; left: -1%; width: 102%; height: 25%; border: 1px solid rgba(255,245,250,.72); border-radius: 50%; background: linear-gradient(180deg,#fff0f7,#ffb9da 76%,#ed85b6); box-shadow: 0 3px 12px rgba(255,191,223,.4); }
-.frosting-top::after { content: "MON AMOUR"; position: absolute; top: 50%; left: 0; width: 100%; color: rgba(255,235,246,.94); font: 700 clamp(10px,2vw,14px) 'Orbitron',sans-serif; letter-spacing: 3px; text-align: center; text-shadow: 0 0 10px rgba(255,228,242,.6); }
+.cake-name { position: absolute; top: 50%; left: 0; width: 100%; color: rgba(255,235,246,.96); font: 700 clamp(12px,2.7vw,18px) 'Orbitron',sans-serif; letter-spacing: 2px; text-align: center; text-shadow: 0 0 10px rgba(255,228,242,.6); transform: translateY(-50%); }
+.cake-dedication { position: absolute; top: 47%; left: 0; z-index: 2; display: flex; width: 100%; flex-direction: column; align-items: center; gap: 2px; color: rgba(255,235,246,.96); text-align: center; text-shadow: 0 0 10px rgba(255,228,242,.6); pointer-events: none; }
+.cake-date { font: 600 clamp(8px,1.55vw,11px) 'Orbitron',sans-serif; letter-spacing: 1px; }
+.cake-love-note { font: 500 clamp(12px,2.2vw,17px)/1 'Allura','Cormorant Garamond',serif; }
 .cake-drip { position: absolute; top: 14%; width: 8%; height: 22%; border-radius: 0 0 50% 50%; background: #ffc3df; box-shadow: inset 1px 0 2px rgba(255,255,255,.6); }
 .drip-one { left: 16%; height: 26%; }
 .drip-two { left: 52%; height: 19%; }
