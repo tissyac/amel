@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 560" fill="none">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#252345"/><stop offset=".55" stop-color="#b85b83"/><stop offset="1" stop-color="#f2a77e"/></linearGradient>
+    <linearGradient id="water" x2="0" y2="1"><stop stop-color="#754363"/><stop offset="1" stop-color="#19172e"/></linearGradient>
+  </defs>
+  <rect width="440" height="560" fill="url(#sky)"/>
+  <circle cx="316" cy="145" r="54" fill="#ffe1c1" opacity=".88"/>
+  <path d="M0 300 95 208l64 61 91-117 102 126 88-57v160H0V300Z" fill="#493451" opacity=".86"/>
+  <path d="m0 343 106-85 76 58 108-94 150 106v99H0v-84Z" fill="#29263d"/>
+  <path d="M0 356c87-20 165 20 244 0s131-12 196 2v202H0V356Z" fill="url(#water)"/>
+  <path d="M261 365h100m-148 28h171m-239 30h208" stroke="#ffcfb4" stroke-opacity=".33" stroke-width="4" stroke-linecap="round"/>
+  <path d="M202 414c-15-31-3-54 14-62 16 8 28 31 13 62m-36 0h69" fill="#191525"/>
+  <circle cx="218" cy="343" r="12" fill="#191525"/><circle cx="229" cy="345" r="11" fill="#191525"/>
+</svg>

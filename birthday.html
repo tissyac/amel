@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#030005">
+    <title>Une surprise pour mon amour</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="experience" aria-label="Animation d'anniversaire pour mon amour">
+        <canvas id="digital-rain" aria-hidden="true"></canvas>
+        <canvas id="particle-layer" aria-hidden="true"></canvas>
+        <div class="vignette" aria-hidden="true"></div>
+        <div class="scanlines" aria-hidden="true"></div>
+
+        <section class="message-stage" aria-live="polite" aria-atomic="true">
+            <div class="message-aura" aria-hidden="true"></div>
+            <div class="message-fragments" aria-hidden="true"></div>
+            <h1 id="message" class="message"></h1>
+        </section>
+
+        <section id="cake-scene" class="cake-scene" aria-hidden="true" aria-label="Gâteau d'anniversaire pour mon amour">
+            <div class="cake-composition">
+                <p class="cake-kicker">UNE DERNIÈRE SURPRISE</p>
+                <div class="cake-art" role="img" aria-label="Gâteau d'anniversaire rose avec cinq bougies allumées">
+                    <div class="candles" aria-hidden="true">
+                        <span class="candle"><i class="candle-flame"></i><i class="candle-wick"></i></span>
+                        <span class="candle"><i class="candle-flame"></i><i class="candle-wick"></i></span>
+                        <span class="candle"><i class="candle-flame"></i><i class="candle-wick"></i></span>
+                        <span class="candle"><i class="candle-flame"></i><i class="candle-wick"></i></span>
+                        <span class="candle"><i class="candle-flame"></i><i class="candle-wick"></i></span>
+                    </div>
+                    <div class="cake-tier cake-tier-upper"><div class="icing"></div></div>
+                    <div class="cake-tier cake-tier-lower"><div class="icing"></div></div>
+                    <div class="cake-garnish" aria-hidden="true">
+                        <span class="cake-berry"></span>
+                        <span class="cake-berry"></span>
+                        <span class="cake-berry"></span>
+                        <span class="cake-berry"></span>
+                    </div>
+                    <div class="cake-plate"></div>
+                </div>
+                <p id="cake-wish" class="cake-wish" aria-live="polite">Ferme les yeux et fais un vœu</p>
+                <button id="blow-candles" class="blow-button" type="button">Souffler les bougies</button>
+            </div>
+        </section>
+
+        <a class="corner-link" href="index.html">Retour</a>
+        <button id="replay" class="replay-button" type="button">Replay</button>
+        <p class="status-label">SYSTEM // CELEBRATION ONLINE</p>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

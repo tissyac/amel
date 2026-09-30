@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 560" fill="none">
+  <defs>
+    <linearGradient id="roseSky" x2="0" y2="1"><stop stop-color="#322640"/><stop offset=".5" stop-color="#b26783"/><stop offset="1" stop-color="#f4b28e"/></linearGradient>
+    <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#8f5875"/><stop offset="1" stop-color="#242036"/></linearGradient>
+  </defs>
+  <rect width="440" height="560" fill="url(#roseSky)"/>
+  <circle cx="220" cy="230" r="74" fill="#ffe0ba" opacity=".82"/>
+  <path d="M0 302c91-17 145-14 220 0 86-16 151-17 220 0v258H0V302Z" fill="url(#sea)"/>
+  <path d="M0 347c83-10 140 11 220 1 75-10 146-11 220 1m-440 54c81-10 153 10 220 0s145-11 220 0m-440 58c73-9 143 8 220 1 77-8 146-9 220 0" stroke="#ffd6bd" stroke-opacity=".32" stroke-width="4"/>
+  <path d="M130 339h180m-151 18h121m-88 19h56" stroke="#ffdab7" stroke-opacity=".38" stroke-width="6" stroke-linecap="round"/>
+  <path d="M169 455c-13-31-2-53 15-60 16 7 28 29 15 60m-39 0h63" fill="#1c1929"/><circle cx="185" cy="390" r="12" fill="#1c1929"/>
+  <path d="M222 457c-13-30-2-51 14-58 16 7 27 28 14 58m-37 0h60" fill="#201b2c"/><circle cx="236" cy="394" r="11" fill="#201b2c"/>
+</svg>

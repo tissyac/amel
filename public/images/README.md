@@ -1,0 +1,1 @@
+Les photos `1.JPG` à `8.JPG` de ton dossier `Images/` sont copiées ici et utilisées par le site. Remplace ces fichiers pour mettre d'autres photos; garde les mêmes noms afin de ne pas avoir à modifier `src/data/content.js`.

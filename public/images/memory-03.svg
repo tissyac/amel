@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 560" fill="none">
+  <defs>
+    <linearGradient id="night" x2="0" y2="1"><stop stop-color="#192138"/><stop offset=".6" stop-color="#654268"/><stop offset="1" stop-color="#e48991"/></linearGradient>
+    <linearGradient id="street" x2="0" y2="1"><stop stop-color="#5e405d"/><stop offset="1" stop-color="#171827"/></linearGradient>
+  </defs>
+  <rect width="440" height="560" fill="url(#night)"/>
+  <circle cx="332" cy="104" r="36" fill="#ffe8d6" opacity=".8"/>
+  <g fill="#28263d"><path d="M0 191h91v257H0z"/><path d="M75 146h89v302H75z"/><path d="M301 176h79v272h-79z"/><path d="M367 218h73v230h-73z"/></g>
+  <g fill="#f5c1a8" opacity=".76"><path d="M18 215h12v19H18zm38 0h12v19H56zm-38 39h12v19H18zm38 0h12v19H56zm43-80h12v19H99zm35 0h12v19h-12zm-35 42h12v19H99zm35 0h12v19h-12zm180-19h12v19h-12zm34 0h12v19h-12zm-34 43h12v19h-12zm34 0h12v19h-12z"/></g>
+  <path d="M0 409c102-23 143-8 220 4 82-14 145-21 220-2v149H0V409Z" fill="url(#street)"/>
+  <path d="M204 560c10-53 7-93 16-143 11 53 8 92 18 143" fill="#f0b78e" opacity=".36"/>
+  <path d="M180 418c-11-26-1-45 14-51 14 6 25 25 14 51m-38 0h61" fill="#1b1a29"/><circle cx="195" cy="361" r="12" fill="#1b1a29"/>
+</svg>
