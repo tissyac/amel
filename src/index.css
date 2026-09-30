@@ -254,6 +254,11 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ffd7e6; outline-offs
 .book-gutter { position: absolute; top: 0; bottom: 0; left: 50%; z-index: 5; width: 15px; pointer-events: none; transform: translateX(-50%); background: linear-gradient(90deg,transparent,rgba(96,63,65,.08),transparent); }
 .book-cover { position: absolute; inset: 0; z-index: 6; width: 100%; transform-style: preserve-3d; transform-origin: left center; transition: transform 1.8s cubic-bezier(.2,.7,.2,1),width 1.2s ease; }
 .book-scene.is-open .book-cover { width: 50%; transform: rotateY(-165deg); }
+.book-page-controls { position: absolute; bottom: -58px; left: 50%; z-index: 9; display: flex; align-items: center; gap: 14px; transform: translateX(-50%); }
+.book-page-controls button { display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 1px solid rgba(255,222,236,.4); border-radius: 50%; color: #fff2f6; background: rgba(17,10,20,.88); box-shadow: 0 4px 16px rgba(0,0,0,.25); font: 400 25px/1 'Cormorant Garamond',serif; cursor: pointer; transition: background .2s ease,border-color .2s ease,opacity .2s ease; }
+.book-page-controls button:not(:disabled):hover { border-color: rgba(255,182,201,.85); background: rgba(189,70,111,.55); }
+.book-page-controls button:disabled { opacity: .35; cursor: default; }
+.book-page-count { min-width: 92px; color: rgba(255,239,246,.78); font: 600 10px 'Rajdhani',sans-serif; letter-spacing: 1px; text-align: center; text-transform: uppercase; }
 .cover-front,.cover-back { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; border: 1px solid #e2c9bf; border-radius: 5px; backface-visibility: hidden; background-color: #fff5eb; background-image: repeating-linear-gradient(0deg,rgba(139,91,74,.035) 0 1px,transparent 1px 4px),radial-gradient(ellipse at 50% 40%,#fffdf9,#f2e2d5); box-shadow: inset 0 0 0 7px rgba(255,255,255,.38),0 22px 60px rgba(0,0,0,.3); }
 .cover-front::before { content: ""; position: absolute; inset: 17px; border: 1px solid rgba(181,119,127,.34); }
 .cover-back { transform: rotateY(180deg); background: linear-gradient(135deg,#e9d5c9,#fff6ec 48%,#dcbab5); }
@@ -317,7 +322,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ffd7e6; outline-offs
   .cake-overline { font-size: 8px; letter-spacing: 3px; }
   .cake-invitation { font-size: 11px; }
   .book-scene { width: min(86vw,330px); height: min(68svh,500px); }
-  .book-scene.is-open { width: 98vw; height: min(89svh,760px); }
+  .book-scene.is-open { width: 98vw; height: min(80svh,760px); }
   .book-scene { perspective: none; transform-style: flat; }
   .book-scene.is-folding { transform: none; }
   .book-interior { transform-style: flat; }
@@ -344,7 +349,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ffd7e6; outline-offs
 }
 
 @media (max-width: 640px) and (orientation: landscape) {
-  .book-scene.is-open { width: 96vw; height: min(86svh,440px); }
+  .book-scene.is-open { width: 96vw; height: min(68svh,350px); }
+  .book-page-controls { bottom: -54px; gap: 12px; }
   .book-spread { gap: 8px; padding: 10px 14px; }
   .memory-message { flex-basis: 92px; }
   .photo-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: minmax(0,1fr); }

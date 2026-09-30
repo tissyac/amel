@@ -4,50 +4,50 @@ import HeartPhotoAnimation from './HeartPhotoAnimation.jsx';
 import PhotoBook from './PhotoBook.jsx';
 import StarBackground from './StarBackground.jsx';
 
-const timeline = [
+const openingTimeline = [
   [1200, 'opening'],
   [3050, 'spread-0'],
-  [5200, 'spread-1'],
-  [7350, 'spread-2'],
-  [9500, 'spread-3'],
-  [11100, 'folding'],
-  [11900, 'pause'],
-  [12400, 'pile'],
-  [13000, 'heart'],
-  [17800, 'finished'],
 ];
 
-const mobileTimeline = [
-  [1200, 'opening'],
-  [3050, 'spread-0'],
-  [7250, 'spread-1'],
-  [11450, 'spread-2'],
-  [15650, 'spread-3'],
-  [19850, 'folding'],
-  [20650, 'pause'],
-  [21150, 'pile'],
-  [21750, 'heart'],
-  [26550, 'finished'],
-];
+const finaleTimeline = {
+  folding: [800, 'pause'],
+  pause: [500, 'pile'],
+  pile: [600, 'heart'],
+  heart: [4800, 'finished'],
+};
 
 function RomanticExperience({ onReplay }) {
   const [phase, setPhase] = useState('closed');
 
   useEffect(() => {
-    const isMobile = window.matchMedia('(max-width: 640px)').matches;
-    const activeTimeline = isMobile ? mobileTimeline : timeline;
-    const timers = activeTimeline.map(([delay, nextPhase]) => window.setTimeout(() => setPhase(nextPhase), delay));
+    const timers = openingTimeline.map(([delay, nextPhase]) => window.setTimeout(() => setPhase(nextPhase), delay));
     return () => timers.forEach(window.clearTimeout);
   }, []);
 
+  useEffect(() => {
+    const transition = finaleTimeline[phase];
+    if (!transition) return undefined;
+
+    const [delay, nextPhase] = transition;
+    const timer = window.setTimeout(() => setPhase(nextPhase), delay);
+    return () => window.clearTimeout(timer);
+  }, [phase]);
+
+  const page = phase.startsWith('spread-') ? Number(phase.slice('spread-'.length)) : 0;
   const showBook = phase === 'closed' || phase === 'opening' || phase === 'folding' || phase.startsWith('spread-');
   const showHeart = phase === 'pile' || phase === 'heart' || phase === 'finished';
+  const goToPreviousPage = () => {
+    if (page > 0) setPhase(`spread-${page - 1}`);
+  };
+  const goToNextPage = () => {
+    setPhase(page < 3 ? `spread-${page + 1}` : 'folding');
+  };
 
   return (
     <section className={`romantic-experience phase-${phase}`} aria-label="Une lettre et nos souvenirs">
       <StarBackground />
       {phase !== 'pause' && <FloatingHearts />}
-      {showBook && <PhotoBook phase={phase} />}
+      {showBook && <PhotoBook phase={phase} onPrevious={goToPreviousPage} onNext={goToNextPage} />}
       {showHeart && <HeartPhotoAnimation phase={phase} />}
       {phase === 'finished' && (
         <button className="memory-replay" onClick={onReplay} type="button">

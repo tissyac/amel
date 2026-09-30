@@ -15,7 +15,7 @@ function CoverIllustration() {
   );
 }
 
-export default function PhotoBook({ phase }) {
+export default function PhotoBook({ phase, onPrevious, onNext }) {
   const opened = phase !== 'closed';
   const page = phase.startsWith('spread-')
     ? Number(phase.slice('spread-'.length))
@@ -42,6 +42,28 @@ export default function PhotoBook({ phase }) {
         </div>
         <div className="cover-back" aria-hidden="true" />
       </div>
+      {phase.startsWith('spread-') && (
+        <nav className="book-page-controls" aria-label="Navigation de l’album photo">
+          <button
+            aria-label="Page précédente"
+            disabled={page === 0}
+            onClick={onPrevious}
+            title="Page précédente"
+            type="button"
+          >
+            <span aria-hidden="true">←</span>
+          </button>
+          <span className="book-page-count" aria-live="polite">Page {page + 1} sur 4</span>
+          <button
+            aria-label={page === 3 ? 'Terminer l’album et voir les souvenirs' : 'Page suivante'}
+            onClick={onNext}
+            title={page === 3 ? 'Voir les souvenirs' : 'Page suivante'}
+            type="button"
+          >
+            <span aria-hidden="true">→</span>
+          </button>
+        </nav>
+      )}
     </div>
   );
 }
