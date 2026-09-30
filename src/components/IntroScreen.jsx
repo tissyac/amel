@@ -41,7 +41,7 @@ export default function IntroScreen({ onOpen }) {
           ))}
         </div>
         <button className="welcome-button" onClick={onOpen} type="button">
-          Ouvrir mon message <span aria-hidden="true">↗</span>
+          Pour toi, ouvre ici ❤️ <span aria-hidden="true">↗</span>
         </button>
       </div>
     </section>
