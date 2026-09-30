@@ -306,6 +306,13 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ffd7e6; outline-offs
   .cake-invitation { font-size: 11px; }
   .book-scene { width: min(86vw,330px); height: min(68svh,500px); }
   .book-scene.is-open { width: 98vw; height: min(89svh,760px); }
+  .book-scene { perspective: none; transform-style: flat; }
+  .book-scene.is-folding { transform: none; }
+  .book-interior { transform-style: flat; }
+  .book-scene.is-folding .book-interior,
+  .book-scene.is-folding .photo-gallery { transform: none; }
+  .book-cover { transform-style: flat; transition: opacity .55s ease; }
+  .book-scene.is-open .book-cover { width: 100%; transform: none; opacity: 0; visibility: hidden; pointer-events: none; }
   .book-spread { gap: 8px; padding: 10px; }
   .memory-message { flex-basis: clamp(102px,14svh,124px); padding: 10px 22px; }
   .memory-message h2 { font-size: clamp(27px,8vw,37px); }
