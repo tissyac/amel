@@ -303,10 +303,10 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ffd7e6; outline-offs
   .birthday-cake-art { width: min(88vw,440px); }
   .cake-overline { font-size: 8px; letter-spacing: 3px; }
   .cake-invitation { font-size: 11px; }
-  .book-scene { width: min(86vw,330px); height: min(68vh,500px); }
-  .book-scene.is-open { width: 94vw; height: min(78vh,660px); }
-  .book-spread { gap: 10px; padding: 12px; }
-  .memory-message { flex-basis: clamp(108px,17vh,138px); padding: 12px 22px; }
+  .book-scene { width: min(86vw,330px); height: min(68svh,500px); }
+  .book-scene.is-open { width: 98vw; height: min(89svh,760px); }
+  .book-spread { gap: 8px; padding: 10px; }
+  .memory-message { flex-basis: clamp(102px,14svh,124px); padding: 10px 22px; }
   .memory-message h2 { font-size: clamp(27px,8vw,37px); }
   .memory-message-page-1 h2,
   .memory-message-page-2 h2,
@@ -314,13 +314,20 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ffd7e6; outline-offs
   .memory-message-kicker { font-size: 7px; letter-spacing: 2px; }
   .message-heart { top: 8px; right: 12px; font-size: 14px; }
   .message-heart-two { top: 19px; right: 27px; font-size: 9px; }
-  .photo-gallery { gap: 7px; padding: 2px; }
+  .photo-gallery { grid-template-columns: minmax(0,1fr); grid-template-rows: repeat(2,minmax(0,1fr)); gap: 7px; padding: 2px; }
   .photo-card { padding: 4px 4px 0; }
   .photo-card figcaption { min-height: 23px; padding: 5px 2px 4px; font-size: 11px; }
   .heart-finale { width: 96vw; height: min(78vh,690px); }
   .heart-photo { width: clamp(31px,9vw,39px); height: clamp(36px,10.5vw,45px); padding: 3px; }
   .heart-glow { width: 84%; height: 64%; }
   .heart-signoff span { font-size: 7px; letter-spacing: 2px; }
+}
+
+@media (max-width: 640px) and (orientation: landscape) {
+  .book-scene.is-open { width: 96vw; height: min(86svh,440px); }
+  .book-spread { gap: 8px; padding: 10px 14px; }
+  .memory-message { flex-basis: 92px; }
+  .photo-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: minmax(0,1fr); }
 }
 
 @media (max-height: 560px) and (min-width: 641px) {
