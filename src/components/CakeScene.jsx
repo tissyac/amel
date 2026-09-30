@@ -2,11 +2,16 @@ import { useEffect, useState } from 'react';
 
 export default function CakeScene({ onBlown }) {
   const [blown, setBlown] = useState(false);
+  const [ageRevealed, setAgeRevealed] = useState(false);
 
   useEffect(() => {
     if (!blown) return undefined;
-    const timer = window.setTimeout(onBlown, 1350);
-    return () => window.clearTimeout(timer);
+    const revealTimer = window.setTimeout(() => setAgeRevealed(true), 700);
+    const albumTimer = window.setTimeout(onBlown, 3900);
+    return () => {
+      window.clearTimeout(revealTimer);
+      window.clearTimeout(albumTimer);
+    };
   }, [blown, onBlown]);
 
   return (
@@ -34,9 +39,15 @@ export default function CakeScene({ onBlown }) {
           </div>
           <div className="cake-decoration" aria-hidden="true"><i /><i /><i /><i /></div>
           <div className="cake-stand" />
+          {ageRevealed && (
+            <div className="birthday-age-burst" aria-hidden="true">
+              <span>25</span>
+              <small>ANS</small>
+            </div>
+          )}
         </div>
         <p className="cake-invitation" aria-live="polite">
-          {blown ? 'Joyeux anniversaire, mon amour !' : 'Ferme les yeux et fais un vœu'}
+          {ageRevealed ? '25 ans, Amel ! Joyeux anniversaire !' : blown ? 'Joyeux anniversaire, mon amour !' : 'Ferme les yeux et fais un vœu'}
         </p>
         <button
           className="blow-candles-button"
