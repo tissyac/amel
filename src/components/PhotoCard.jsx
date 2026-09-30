@@ -10,7 +10,7 @@ export default function PhotoCard({ photo, index, compact = false, className = '
   return (
     <figure
       className={`photo-card${compact ? ' photo-card-compact' : ''}${loaded ? ' image-loaded' : ''} ${className}`}
-      style={style}
+      style={{ '--photo-background': `url("${photo.src}")`, ...style }}
     >
       {!failed && (
         <img

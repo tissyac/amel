@@ -17,11 +17,26 @@ const timeline = [
   [17800, 'finished'],
 ];
 
+const mobileTimeline = [
+  [1200, 'opening'],
+  [3050, 'spread-0'],
+  [7250, 'spread-1'],
+  [11450, 'spread-2'],
+  [15650, 'spread-3'],
+  [19850, 'folding'],
+  [20650, 'pause'],
+  [21150, 'pile'],
+  [21750, 'heart'],
+  [26550, 'finished'],
+];
+
 function RomanticExperience({ onReplay }) {
   const [phase, setPhase] = useState('closed');
 
   useEffect(() => {
-    const timers = timeline.map(([delay, nextPhase]) => window.setTimeout(() => setPhase(nextPhase), delay));
+    const isMobile = window.matchMedia('(max-width: 640px)').matches;
+    const activeTimeline = isMobile ? mobileTimeline : timeline;
+    const timers = activeTimeline.map(([delay, nextPhase]) => window.setTimeout(() => setPhase(nextPhase), delay));
     return () => timers.forEach(window.clearTimeout);
   }, []);
 
