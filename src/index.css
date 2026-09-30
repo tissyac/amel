@@ -284,6 +284,25 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ffd7e6; outline-offs
 .heart-finale.is-formed .heart-signoff { opacity: 1; transform: translateY(0); }
 .heart-signoff span { font: 600 9px 'Orbitron',sans-serif; letter-spacing: 3px; text-shadow: 0 0 12px #ff6796; }
 .heart-signoff i { color: #ff6d95; font: normal 16px Georgia,serif; text-shadow: 0 0 12px #ff547e; }
+.heart-message-button { min-height: 36px; margin-top: 3px; padding: 7px 12px; border: 1px solid rgba(255,220,233,.42); border-radius: 999px; color: #fff1f5; background: rgba(19,8,20,.82); font: 600 9px 'Rajdhani',sans-serif; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; pointer-events: auto; transition: background .2s ease,border-color .2s ease; }
+.heart-message-button:hover { border-color: rgba(255,196,216,.9); background: rgba(157,38,87,.76); }
+.love-letter-dialog { position: fixed; inset: 0; width: min(760px,calc(100vw - 32px)); max-width: none; max-height: min(88svh,820px); margin: auto; padding: 0; overflow: hidden; border: 1px solid rgba(205,145,154,.72); border-radius: 5px; color: #66434f; background: #fff8f2; box-shadow: 0 30px 100px rgba(0,0,0,.58),0 0 40px rgba(255,166,196,.22); animation: loveLetterEnter .45s cubic-bezier(.2,.7,.2,1) both; }
+.love-letter-dialog::backdrop { background: rgba(5,3,12,.78); backdrop-filter: blur(8px); }
+.love-letter-paper { position: relative; max-height: inherit; padding: clamp(25px,5vw,48px); overflow-y: auto; background-image: repeating-linear-gradient(0deg,rgba(130,91,77,.025) 0 1px,transparent 1px 5px),radial-gradient(ellipse at 50% 0%,#fffdfb,#fff8f2 75%); }
+.love-letter-header { position: relative; padding-bottom: 23px; border-bottom: 1px solid rgba(179,137,132,.26); text-align: center; }
+.love-letter-header > p,.love-letter-ending > span { margin: 0; color: #b3898b; font: 600 9px 'Rajdhani',sans-serif; letter-spacing: 3px; text-transform: uppercase; }
+.love-letter-header h2 { margin: 8px 0 0; color: #80545f; font: 500 36px/1 'Allura','Cormorant Garamond',serif; }
+.love-letter-close { position: absolute; top: -12px; right: -12px; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(179,137,132,.3); border-radius: 50%; color: #80545f; background: rgba(255,253,250,.95); font: 400 25px/1 'Cormorant Garamond',serif; cursor: pointer; }
+.love-letter-pages { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 34px; }
+.love-letter-page { position: relative; padding: 24px 0 20px; border-bottom: 1px solid rgba(179,137,132,.2); }
+.love-letter-page-number { color: #bd7184; font: 700 9px 'Rajdhani',sans-serif; letter-spacing: 2px; }
+.love-letter-message { margin: 8px 0 13px; color: #684651; font: italic 500 17px/1.4 'Cormorant Garamond',serif; text-align: center; text-wrap: pretty; }
+.love-letter-captions { display: grid; gap: 8px; }
+.love-letter-captions p { margin: 0; color: #8d6a70; font: italic 500 14px/1.35 'Cormorant Garamond',serif; text-align: center; }
+.love-letter-captions p span { display: block; margin-bottom: 2px; color: #b3898b; font: 600 8px 'Rajdhani',sans-serif; letter-spacing: 1px; text-transform: uppercase; }
+.love-letter-ending { padding-top: 24px; text-align: center; }
+.love-letter-ending p { max-width: 470px; margin: 9px auto; color: #80545f; font: italic 500 20px/1.35 'Cormorant Garamond',serif; text-wrap: balance; }
+.love-letter-ending i { color: #d1768c; font: normal 18px Georgia,serif; }
 
 .memory-return,.memory-replay { position: absolute; z-index: 5; border: 1px solid rgba(255,222,236,.2); border-radius: 999px; padding: 9px 13px; color: rgba(255,239,246,.58); background: rgba(10,7,18,.36); font: 600 8px 'Rajdhani',sans-serif; letter-spacing: 2px; text-decoration: none; text-transform: uppercase; backdrop-filter: blur(8px); transition: color .25s ease,border-color .25s ease,background .25s ease; }
 .memory-return { top: 18px; right: 18px; }
@@ -302,6 +321,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ffd7e6; outline-offs
 @keyframes birthdayAgeAppear { 0% { opacity:0; transform:scale(.28) rotate(-14deg); filter:blur(8px); } 58% { opacity:1; transform:scale(1.12) rotate(4deg); filter:blur(0); } 78% { transform:scale(.96) rotate(-2deg); } 100% { opacity:1; transform:scale(1) rotate(0); filter:blur(0); } }
 @keyframes birthdayAgeRays { 0% { opacity:0; transform:scale(.18) rotate(-24deg); } 42% { opacity:1; } 100% { opacity:.86; transform:scale(1.12) rotate(12deg); } }
 @keyframes birthdayAgeRing { 0% { opacity:.95; transform:scale(.3); } 100% { opacity:0; transform:scale(1.2); } }
+@keyframes loveLetterEnter { from { opacity:0; transform:translateY(15px) scale(.97); } to { opacity:1; transform:translateY(0) scale(1); } }
 @keyframes heartDrift { 0% { opacity:0; transform:translate3d(0,0,0) rotate(-12deg) scale(.75); } 15% { opacity:.8; } 82% { opacity:.6; } 100% { opacity:0; transform:translate3d(var(--heart-drift),-115vh,0) rotate(15deg) scale(1.12); } }
 @keyframes messageArrive { from { opacity:0; transform:translateY(13px) scale(.985); filter:blur(4px); } to { opacity:1; transform:translateY(0) scale(1); filter:blur(0); } }
 @keyframes galleryArrive { from { opacity:0; transform:translateY(17px) scale(.985); filter:blur(5px); } to { opacity:1; transform:translateY(0) scale(1); filter:blur(0); } }
@@ -352,6 +372,18 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ffd7e6; outline-offs
   .heart-photo { width: clamp(31px,9vw,39px); height: clamp(36px,10.5vw,45px); padding: 3px; }
   .heart-glow { width: 84%; height: 64%; }
   .heart-signoff span { font-size: 7px; letter-spacing: 2px; }
+  .heart-message-button { min-height: 44px; padding: 9px 11px; font-size: 9px; }
+  .love-letter-dialog { width: calc(100vw - 24px); max-height: 86svh; }
+  .love-letter-paper { padding: 23px 17px; }
+  .love-letter-header { padding: 8px 20px 18px; }
+  .love-letter-header h2 { font-size: 32px; }
+  .love-letter-close { top: -15px; right: -8px; }
+  .love-letter-pages { grid-template-columns: minmax(0,1fr); }
+  .love-letter-page { padding: 20px 0 17px; }
+  .love-letter-message { font-size: 18px; }
+  .love-letter-captions { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+  .love-letter-captions p { font-size: 13px; }
+  .love-letter-ending p { font-size: 19px; }
 }
 
 @media (max-width: 640px) and (orientation: landscape) {

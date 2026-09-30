@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { content } from '../data/content.js';
 import PhotoCard from './PhotoCard.jsx';
 
@@ -20,7 +21,17 @@ function heartPositions(count) {
 const positions = heartPositions(content.heartPhotoCount);
 
 export default function HeartPhotoAnimation({ phase }) {
+  const [letterOpen, setLetterOpen] = useState(false);
+  const letterDialogRef = useRef(null);
   const formed = phase === 'heart' || phase === 'finished';
+
+  useEffect(() => {
+    const dialog = letterDialogRef.current;
+    if (!letterOpen || !dialog) return undefined;
+
+    dialog.showModal();
+    return () => dialog.close();
+  }, [letterOpen]);
 
   return (
     <section className={`heart-finale${formed ? ' is-formed' : ' is-piling'}`} aria-label="Souvenirs disposés en forme de cœur">
@@ -49,7 +60,59 @@ export default function HeartPhotoAnimation({ phase }) {
       <div className="heart-signoff">
         <span>MON AMOUR</span>
         <i aria-hidden="true">♥</i>
+        <button className="heart-message-button" onClick={() => setLetterOpen(true)} type="button">
+          Lire nos messages
+        </button>
       </div>
+      {letterOpen && (
+        <dialog
+          aria-labelledby="love-letter-title"
+          className="love-letter-dialog"
+          onCancel={() => {
+            setLetterOpen(false);
+          }}
+          onClick={(event) => {
+            if (event.target === letterDialogRef.current) setLetterOpen(false);
+          }}
+          ref={letterDialogRef}
+        >
+          <div className="love-letter-paper">
+            <header className="love-letter-header">
+              <p>Quelques mots pour toi</p>
+              <h2 id="love-letter-title">Amel, mon amour</h2>
+              <button aria-label="Fermer la lettre" className="love-letter-close" onClick={() => setLetterOpen(false)} type="button">
+                <span aria-hidden="true">×</span>
+              </button>
+            </header>
+            <div className="love-letter-pages">
+              {content.messages.map((message, pageIndex) => (
+                <article className="love-letter-page" key={`love-letter-page-${pageIndex}`}>
+                  <span className="love-letter-page-number">0{pageIndex + 1}</span>
+                  <p className="love-letter-message">{message}</p>
+                  <div className="love-letter-captions">
+                    {content.photos.slice(pageIndex * 2, pageIndex * 2 + 2).map((photo, photoIndex) => {
+                      const imageNumber = pageIndex * 2 + photoIndex + 1;
+                      if (imageNumber === content.photos.length) return null;
+
+                      return (
+                        <p key={photo.src}>
+                          <span>Photo {imageNumber}</span>
+                          {photo.caption}
+                        </p>
+                      );
+                    })}
+                  </div>
+                </article>
+              ))}
+            </div>
+            <footer className="love-letter-ending">
+              <span>La dernière photo</span>
+              <p>{content.photos[content.photos.length - 1].caption}</p>
+              <i aria-hidden="true">♥</i>
+            </footer>
+          </div>
+        </dialog>
+      )}
     </section>
   );
 }
