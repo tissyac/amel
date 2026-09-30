@@ -332,7 +332,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ffd7e6; outline-offs
   .book-scene.is-open .book-cover { width: 100%; transform: none; opacity: 0; visibility: hidden; pointer-events: none; }
   .book-spread { gap: 8px; padding: 10px; }
   .memory-message { flex-basis: clamp(102px,14svh,124px); padding: 10px 22px; }
+  .memory-message-page-0 { flex-basis: clamp(150px,22svh,186px); }
   .memory-message h2 { font-size: clamp(27px,8vw,37px); }
+  .memory-message-page-0 h2 { font-size: clamp(17px,5.2vw,21px); line-height: 1.08; }
   .memory-message-page-1 h2,
   .memory-message-page-2 h2,
   .memory-message-page-3 h2 { font-size: clamp(18px,5.2vw,23px); }
